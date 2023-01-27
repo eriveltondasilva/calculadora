@@ -1,0 +1,48 @@
+// *url('/assets/scss/01.Settings/_a.variables.scss');
+
+// ----------------------------------------
+// #VARIÁVEIS SASS
+// -------------------------------------
+
+// -> Colors:
+$colors: (
+    'primary'       : blue,
+    'secondary'     : green, 
+    'background'    : #f5f5f5,
+    'text'          : #222,
+);
+
+
+// -> breakpoints:
+$breakpoints: (
+    'small'         : 600px,
+    'med'           : 900px,
+    'large'         : 1200px,
+);
+
+
+// -> Fonts:
+$fonts: (
+    "sansserif": (
+        'Source Sans Pro',
+        'Verdana',
+        'Arial',
+        'Helvetica',
+        sans-serif,
+    ),
+
+    "serif": (
+        'Source Serif Pro',
+        'Times New Roman',
+        'Times',
+        'Georgia',
+        serif,
+    ),
+
+    "monospace": (
+        'Source Code Pro',
+        'Courier',
+        monospace,
+    )
+);
+

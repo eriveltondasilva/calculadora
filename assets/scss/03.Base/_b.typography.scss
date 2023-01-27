@@ -1,0 +1,31 @@
+// *url('/assets/scss/03.Base/_b.typography.scss')
+
+/*----------------------------------------*\
+//#TYPOGRAPHY
+\*----------------------------------------*/
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('../../fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf');
+};
+
+html {
+    /**
+     * Variáveis css das fontes
+     *
+     * 1. A função inspect() faz as fontes continuarem com suas aspas.
+     *
+     */
+    @each $font, $value in $fonts {
+        --font-#{$font}: #{inspect($value)}; /* [1] */
+    }
+
+    /**
+     * Definições tipográficas
+     */
+    font-family: var(--font-sansserif);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+    
+}

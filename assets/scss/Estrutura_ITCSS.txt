@@ -1,0 +1,36 @@
+-> Arquitetura de CSS/SASS (ITCSS)
+
+01.Settings
+|	_.index.scss			# Índice que reúne todos os arquivos da pasta '01.Settings' para exportar para o arquivo 'main.scss'.
+|	_a.variables.scss		# Arquivo no qual fica localizado as variáveis de cores, lists e maps.
+|	_b.functions.scss		# Funções úteis.
+|	_c.mixins.scss			# Mixins para evitar repetir declarações.
+|	_d.placeholders.scss	# Placeholders.
+
+02.Vendors
+|	_.index.scss            # Arquivo para "linkar" folhas de estilos de terceiros da pasta 'assets/css/vendors'.
+
+03.Base
+|	_.index.scss			# Índice que reúne todos os arquivos da pasta '03.Base' para exportar para o arquivo 'main.scss'.
+|	_a.generics.scss		# Arquivo para as declarações gerais como definir 'border-box' para todos os elementos.
+|	_b.typography.scss		# Arquivo que define todas as informações sobre tipografia (font-family, font-size, font-weight...).
+|	_c.elements.scss		# Todas as definições de elementos como body, header, h1, h2, h3...
+
+04.Layout
+|	_.index.scss			# Índice que reúne todos os arquivos da pasta '04.Layout' para exportar para o arquivo 'main.scss'.
+|	_a.grid.scss			# Definições de layout globais.
+
+05.Components
+|	_.index.scss			# Índice que reúne todos os arquivos da pasta '05.Components' para exportar para o arquivo 'main.scss'.
+|	_a.components.scss		# Componentes como botões, box...
+
+06.Themes
+|	_.index.scss			# Índice que reúne todos os arquivos da pasta '06.Themes' para exportar para o arquivo 'main.scss'.
+|   _a.default.scss         # Todas as definições de cores (deve ser colocado as variáveis dentro de ':root' e as outras definições fora de qualquer bloco).
+|	_b.dark.scss			# Todas as definições do modo dark (todas as declarações devem ficar dentro de '.dark:root').
+
+07.Utilities
+|	_.index.scss			# Índice que reúne todos os arquivos da pasta '07.Utilities' para exportar para o arquivo 'main.scss'.
+|	_a.no-js.scss			# Definições para caso o JavaScripts não esteja funcionando.
+|	_b.hacks.scss			# Todas as definições que deverá se sobrepor as demais e sempre terá '!important' ao final.
+|	_c.shame.scss			# Declarações que funcionam mesmo sem se saber o porquê (devem ser evitadas e, posteriormente, eliminadas).

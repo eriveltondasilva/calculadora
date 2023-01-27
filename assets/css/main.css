@@ -1,0 +1,162 @@
+@charset "UTF-8";
+/*----------------------------------------*\
+//#GENERICS
+\*----------------------------------------*/
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/*----------------------------------------*\
+//#TYPOGRAPHY
+\*----------------------------------------*/
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("../../fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf");
+}
+html {
+  /**
+   * Variáveis css das fontes
+   *
+   * 1. A função inspect() faz as fontes continuarem com suas aspas.
+   *
+   */
+  --font-sansserif: "Source Sans Pro", "Verdana", "Arial", "Helvetica", sans-serif; /* [1] */
+  --font-serif: "Source Serif Pro", "Times New Roman", "Times", "Georgia", serif; /* [1] */
+  --font-monospace: "Source Code Pro", "Courier", monospace; /* [1] */
+  /**
+   * Definições tipográficas
+   */
+  font-family: var(--font-sansserif);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+/*----------------------------------------*\
+//#ELEMENTS
+\*----------------------------------------*/
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+hr {
+  display: block;
+  border-top: 1px solid #ccc;
+  border: 0;
+  height: 1px;
+  margin: 1em 0;
+  padding: 0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/*----------------------------------------*\
+//#GRID
+\*----------------------------------------*/
+/*----------------------------------------*\
+//#COMPONENTS
+\*----------------------------------------*/
+/*----------------------------------------*\
+//#THEME: DEFAULT
+\*----------------------------------------*/
+:root {
+  /**
+   * Variáveis de cores
+   *
+   */
+  --color-primary: blue;
+  --color-secondary: green;
+  --color-background: #f5f5f5;
+  --color-text: #222;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--text);
+}
+
+/*----------------------------------------*\
+//#THEME: DARK
+\*----------------------------------------*/
+.dark:root {
+  /**
+   * Variáveis de cores do dark mode
+   *
+   */
+  --color-primary: #000099;
+  --color-secondary: #004d00;
+  --color-background: #313131;
+  --color-text: lightgray;
+}
+
+/*----------------------------------------*\
+//#NO-JS
+\*----------------------------------------*/
+/*----------------------------------------*\
+//#HACKS
+\*----------------------------------------*/
+/* Esconde o elemento sem deixar espaço do elemento no local */
+.is-hidden {
+  display: none !important;
+}
+
+/* Mostra o elemento como um bloco */
+.is-visible-block {
+  display: block !important;
+}
+
+/* Mostra o elemento como um display inline */
+.is-visible-inline {
+  display: inline !important;
+}
+
+/* Esconde o elemento deixando o espaço do elemento no local */
+.is-invisible {
+  visibility: hidden !important;
+}
+
+/* Coloca o texto do centro */
+.text-center {
+  text-align: center !important;
+}
+
+/* Coloca o texto à direita */
+.text-right {
+  text-align: right !important;
+}
+
+/* Coloca o texto à esquerda */
+.text-left {
+  text-align: left !important;
+}
+
+/* Justifica o texto */
+.text-justify {
+  text-align: justify !important;
+}
+
+/*----------------------------------------*\
+//#SHAME
+\*----------------------------------------*//*# sourceMappingURL=main.css.map */

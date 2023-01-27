@@ -1,0 +1,13 @@
+// *url('/assets/scss/03.Base/_a.generics.scss')
+
+/*----------------------------------------*\
+//#GENERICS
+\*----------------------------------------*/
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}

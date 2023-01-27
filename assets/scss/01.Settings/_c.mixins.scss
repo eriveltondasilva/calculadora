@@ -1,0 +1,20 @@
+// *url('/assets/scss/01.Settings/_c.mixins.scss')
+
+// ----------------------------------------
+// #MIXINS_SASS
+// ----------------------------------------
+
+//
+@mixin flex($direction: row, $wrap: nowrap, $align-horizontal: center, $align-vertical: center) {
+    display: flex;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+    justify-content: $align-horizontal;
+    align-items: $align-vertical;
+}
+
+//
+@mixin size($width: 100%, $height: $width) {
+    width: $width;
+    height: $height;
+};
