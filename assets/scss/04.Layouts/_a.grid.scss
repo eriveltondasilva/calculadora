@@ -5,22 +5,108 @@
 //#GRID
 \*----------------------------------------*/
 
-// #body {
 
-// }
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-// #header {
+}
 
-// }
 
-// #nav {
+.background {
+    width: 300px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: lightgreen; //
 
-// }
+}
 
-// #main {
 
-// }
+h1 {
+    margin: 0;
+}
 
-// #footer {
 
-// }
+.screen {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    border-radius: 10px;
+    padding: 5px 10px;
+    background-color: snow;
+    font-size: 1.8rem;
+    font-weight: 500;
+
+}
+
+.screen__result {
+    color: gray;
+    font-weight: 400;
+}
+
+
+.keyboard {
+    margin: 20px 0;
+    display: grid;
+    grid-template-columns:
+        repeat(4, 1fr);
+    gap: 10px;
+}
+
+.keyboard__number--lg {
+    grid-column: span 2;
+}
+
+.keyboard__key--minus {
+    grid-column: 4;
+    grid-row: 2;
+}
+
+.keyboard__key--plus {
+    grid-column: 4;
+    grid-row: 3;
+}
+
+.keyboard__key--equals {
+    grid-row: 4 / 6;
+    grid-column: 4;
+    display: grid;
+    place-items: center;
+}
+
+
+.fa-circle {
+    font-size: 0.2em;
+}
+
+.keyboard__key,
+.keyboard__number,
+.keyboard__key-aside {
+    font-size: 1.5em;
+    border-radius: 5px;
+    background-color: #fff;
+    text-align: center;
+    padding: 5px 0;
+}
+
+.keyboard__key,
+.keyboard__key-aside {
+    background-color: #ccf;
+}
+
+.keyboard__key:hover,
+.keyboard__number:hover,
+.keyboard__key-aside:hover {
+    background-color: lightgray;
+    border-color: gray;
+}
+
+.keyboard__key:hover,
+.keyboard__key-aside:hover {
+    background-color: #aaf;
+}
+
+
+
+
