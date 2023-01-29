@@ -10,7 +10,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 
@@ -18,39 +17,29 @@ body {
     width: 300px;
     padding: 20px;
     border-radius: 20px;
-    background-color: lightgreen; //
-
+    border: 5px solid rgb(0, 0, 0);
 }
-
-
-h1 {
-    margin: 0;
-}
-
 
 .screen {
+    @include shadow();
+
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     border-radius: 10px;
     padding: 5px 10px;
-    background-color: snow;
     font-size: 1.8rem;
     font-weight: 500;
-
 }
 
 .screen__result {
-    color: gray;
     font-weight: 400;
 }
-
 
 .keyboard {
     margin: 20px 0;
     display: grid;
-    grid-template-columns:
-        repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 10px;
 }
 
@@ -75,7 +64,6 @@ h1 {
     place-items: center;
 }
 
-
 .fa-circle {
     font-size: 0.2em;
 }
@@ -83,30 +71,16 @@ h1 {
 .keyboard__key,
 .keyboard__number,
 .keyboard__key-aside {
+    @include shadow();
+
     font-size: 1.5em;
     border-radius: 5px;
-    background-color: #fff;
     text-align: center;
     padding: 5px 0;
 }
 
-.keyboard__key,
-.keyboard__key-aside {
-    background-color: #ccf;
+.keyboard__key:active,
+.keyboard__number:active,
+.keyboard__key-aside:active {
+    @include shadow(inset);
 }
-
-.keyboard__key:hover,
-.keyboard__number:hover,
-.keyboard__key-aside:hover {
-    background-color: lightgray;
-    border-color: gray;
-}
-
-.keyboard__key:hover,
-.keyboard__key-aside:hover {
-    background-color: #aaf;
-}
-
-
-
-

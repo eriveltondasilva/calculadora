@@ -17,4 +17,17 @@
 @mixin size($width: 100%, $height: $width) {
     width: $width;
     height: $height;
-};
+}
+
+;
+
+@mixin shadow($z: "") {
+    @if $z == "inset" {
+        box-shadow: inset 5px 5px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    @else {
+        box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.1);
+
+    }
+}
