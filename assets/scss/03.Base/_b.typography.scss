@@ -4,20 +4,34 @@
 //#TYPOGRAPHY
 \*----------------------------------------*/
 
-@font-face {
-    font-family: 'Source Sans Pro';
-    src: url('../../fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf');
-}
 
-;
-
+/**
+ * Definições tipográficas
+ */
 :root {
-    /**
-     * Definições tipográficas
-     */
     font-family: font(sansserif);
     font-size: 16px;
     font-weight: 400;
     line-height: 1.4;
-
 }
+
+.screen {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.screen__result {
+    font-weight: 400;
+}
+
+.keyboard__key,
+.keyboard__number,
+.keyboard__key-aside {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.fa-circle {
+    font-size: 0.2rem;
+}
+

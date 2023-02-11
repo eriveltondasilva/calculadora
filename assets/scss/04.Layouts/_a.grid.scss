@@ -6,41 +6,23 @@
 \*----------------------------------------*/
 
 
-body {
+.l-body {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-
-.background {
-    width: 300px;
-    padding: 20px;
-    border-radius: 20px;
-    border: 5px solid rgb(0, 0, 0);
-}
-
-.screen {
-    @include shadow();
-
+.l-screen {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    border-radius: 10px;
-    padding: 5px 10px;
-    font-size: 1.8rem;
-    font-weight: 500;
 }
 
-.screen__result {
-    font-weight: 400;
-}
-
-.keyboard {
-    margin: 20px 0;
+.l-keyboard {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
+
 }
 
 .keyboard__number--lg {
@@ -58,29 +40,9 @@ body {
 }
 
 .keyboard__key--equals {
-    grid-row: 4 / 6;
-    grid-column: 4;
     display: grid;
     place-items: center;
+    grid-row: 4 / 6;
+    grid-column: 4;
 }
 
-.fa-circle {
-    font-size: 0.2em;
-}
-
-.keyboard__key,
-.keyboard__number,
-.keyboard__key-aside {
-    @include shadow();
-
-    font-size: 1.5em;
-    border-radius: 5px;
-    text-align: center;
-    padding: 5px 0;
-}
-
-.keyboard__key:active,
-.keyboard__number:active,
-.keyboard__key-aside:active {
-    @include shadow(inset);
-}

@@ -316,39 +316,56 @@ html {
   box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
 }
 
 /*----------------------------------------*\
 //#TYPOGRAPHY
 \*----------------------------------------*/
-@font-face {
-  font-family: "Source Sans Pro";
-  src: url("../../fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf");
-}
+/**
+ * Definições tipográficas
+ */
 :root {
-  /**
-   * Definições tipográficas
-   */
   font-family: "Source Sans Pro", "Verdana", "Arial", "Helvetica", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.4;
 }
 
+.screen {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.screen__result {
+  font-weight: 400;
+}
+
+.keyboard__key,
+.keyboard__number,
+.keyboard__key-aside {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.fa-circle {
+  font-size: 0.2rem;
+}
+
 /*----------------------------------------*\
 //#ELEMENTS
 \*----------------------------------------*/
 body {
-  width: 100%;
   height: 100vh;
-  margin: 0;
-  padding: 0;
-}
-
-h1 {
-  margin: 0;
+  width: 100%;
 }
 
 a {
@@ -361,7 +378,6 @@ hr {
   border: 0;
   height: 1px;
   margin: 1em 0;
-  padding: 0;
 }
 
 audio,
@@ -380,36 +396,19 @@ textarea {
 /*----------------------------------------*\
 //#GRID
 \*----------------------------------------*/
-body {
+.l-body {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.background {
-  width: 300px;
-  padding: 20px;
-  border-radius: 20px;
-  border: 5px solid rgb(0, 0, 0);
-}
-
-.screen {
-  box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.1);
+.l-screen {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  border-radius: 10px;
-  padding: 5px 10px;
-  font-size: 1.8rem;
-  font-weight: 500;
 }
 
-.screen__result {
-  font-weight: 400;
-}
-
-.keyboard {
-  margin: 20px 0;
+.l-keyboard {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
@@ -430,23 +429,37 @@ body {
 }
 
 .keyboard__key--equals {
-  grid-row: 4/6;
-  grid-column: 4;
   display: grid;
   place-items: center;
+  grid-row: 4/6;
+  grid-column: 4;
 }
 
-.fa-circle {
-  font-size: 0.2em;
+/*----------------------------------------*\
+//#COMPONENTS
+\*----------------------------------------*/
+.background {
+  border-radius: 20px;
+  border: 1px solid rgb(0, 0, 0);
+  padding: 20px;
+  width: 300px;
+}
+
+.screen {
+  box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+.keyboard {
+  margin: 20px 0;
 }
 
 .keyboard__key,
 .keyboard__number,
 .keyboard__key-aside {
   box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.1);
-  font-size: 1.5em;
   border-radius: 5px;
-  text-align: center;
   padding: 5px 0;
 }
 
@@ -456,9 +469,6 @@ body {
   box-shadow: inset 5px 5px 3px rgba(0, 0, 0, 0.1);
 }
 
-/*----------------------------------------*\
-//#COMPONENTS
-\*----------------------------------------*/
 /*----------------------------------------*\
 //#THEME: DEFAULT
 \*----------------------------------------*/
