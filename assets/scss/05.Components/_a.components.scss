@@ -7,7 +7,7 @@
 
 .background {
     border-radius: 20px;
-    border: 1px solid rgb(0, 0, 0);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4), inset 3px 3px 8px rgb(255, 255, 255, 0.5);
     padding: 20px;
     width: 300px;
 }
@@ -17,6 +17,10 @@
 
     border-radius: 10px;
     padding: 5px 10px;
+}
+
+.screen__operation, .screen__result {
+height: 3rem;
 }
 
 .keyboard {
