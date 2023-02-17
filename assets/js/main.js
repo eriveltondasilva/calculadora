@@ -24,7 +24,7 @@ function _clear() {
 };
 
 
-// Deletar os dígitos do .screen__operation.
+// Deletar um por um os dígitos da tela.
 DELETE.addEventListener("click", _delete);
 
 function _delete() {
@@ -33,15 +33,35 @@ function _delete() {
 };
 
 
-// Imprimir os números na tela
+// Imprimir zeros na tela
+DOT.addEventListener("click", typeDot);
+
+function typeDot() {
+    let display = RESULT.innerHTML.length;
+    let dot = RESULT.innerHTML.includes(",");
+
+    if (display < 8 && display > 0) {
+        if (dot < 1) {
+            RESULT.innerHTML += this.value;
+        }
+    }
+
+    OPERATION.innerHTML = RESULT.innerHTML;
+}
+
+
+// Imprimir zeros na tela
 ZERO.addEventListener("click", typeZero);
 
 function typeZero() {
     let display = RESULT.innerHTML.length;
+    let zero = RESULT.innerHTML.charAt(0);
 
-    if (display > 0 && display < 8) {
-        RESULT.innerHTML += this.value;
-    }
+    if (display < 8) {
+        if (zero == "" || zero > 0 || display > 1) {
+            RESULT.innerHTML += this.value;
+        }
+    };
 
     OPERATION.innerHTML = RESULT.innerHTML;
 }
@@ -54,9 +74,15 @@ for (let i = 0; i < NUMBERS.length; i++) {
 
     function typeNumber() {
         let display = RESULT.innerHTML.length;
+        let zero = RESULT.innerHTML.charAt(0);
 
         if (display < 8) {
-            RESULT.innerHTML += this.value;
+            if (zero == "0" && display < 1) {
+                RESULT.innerHTML = "";
+                RESULT.innerHTML += this.value;
+            } else {
+                RESULT.innerHTML += this.value;
+            }
         };
 
         OPERATION.innerHTML = RESULT.innerHTML;
@@ -64,18 +90,29 @@ for (let i = 0; i < NUMBERS.length; i++) {
 };
 
 
-// // Imprimir os operadores matemáticos na tela
-// for (let j = 0; j < OPERATORS.length; j++) {
-//     OPERATORS[j].addEventListener("click", typeOperator);
+// Imprimir os operadores matemáticos na tela
+for (let i = 0; i < OPERATORS.length; i++) {
+    OPERATORS[i].addEventListener("click", typeOperator);
 
-//     function typeOperator() {
-//         let display = OPERATION.innerHTML.length;
+    function typeOperator() {
+        let display = OPERATION.innerHTML.length;
+        let operator = OPERATION.innerHTML.includes(this.value);
 
-//         if (display > 0 && display < 12) {
-//             OPERATION.innerHTML += this.value;
-//         };
-//     };
-// };
+        if (display > 0 && display < 8) {
+            if (operator < 1) {
+
+                OPERATION.innerHTML += this.value;
+                RESULT.innerHTML = "";
+
+
+            }
+        };
+    };
+
+}
+
+
+
 
 // EQUAL.addEventListener("click", _equal);
 
