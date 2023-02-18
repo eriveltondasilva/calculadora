@@ -9,14 +9,15 @@
     border-radius: 20px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4), inset 3px 3px 8px rgb(255, 255, 255, 0.5);
     padding: 20px;
-    width: 300px;
+    height: 500px;
+    width: 350px;
 }
 
 .screen {
     @include shadow();
 
     border-radius: 10px;
-    padding: 5px 10px;
+    padding: 5px 20px;
 }
 
 .screen__operation,
@@ -25,7 +26,7 @@
 }
 
 .keyboard {
-    margin: 20px 0;
+    margin: 15px 0;
 }
 
 .keyboard__key,
@@ -40,7 +41,7 @@
 .keyboard__key,
 .keyboard__number,
 .keyboard__key-aside:not(.keyboard__key--equals) {
-    height: 2.5rem
+    height: 50px;
 }
 
 .keyboard__key:active,
