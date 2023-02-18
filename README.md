@@ -1,4 +1,4 @@
-<h1 style="color: blue;"># Calculadora</h1>
+<h1># Calculadora</h1>
 
 <h3>Tecnologias usadas:</h3>
 <ul>
