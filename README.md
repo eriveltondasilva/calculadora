@@ -9,9 +9,10 @@
   <li>JavaScript</li>
 </ul>
 
-
 <h3>Deploy:</h3>
 <p>
   <a href="https://calculadora-eriveltondasilva.vercel.app/">Clique aqui</a>
   para ver este projeto funcionando.
 </p>
+
+<img src="calculadora.png" alt="calculadora">
