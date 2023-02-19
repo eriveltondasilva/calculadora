@@ -8,11 +8,14 @@ const RESULT = document.querySelector(".js-screen__result");
 const CLEAR = document.querySelector(".js-keyboard__clear");
 const DELETE = document.querySelector(".js-keyboard__delete");
 const EQUAL = document.querySelector(".js-keyboard__equal");
-const ZERO = document.querySelector(".js-keyboard__zero")
-const DOT = document.querySelector(".js-keyboard__dot")
+const ZERO = document.querySelector(".js-keyboard__zero");
+const DOT = document.querySelector(".js-keyboard__dot");
+const SCREEN__EQUAL = document.querySelector(".js-screen__equal");
 
 const NUMBERS = document.querySelectorAll(".js-keyboard__number");
 const OPERATORS = document.querySelectorAll(".js-keyboard__operator");
+
+let displayLimit = 8;
 
 
 
@@ -55,12 +58,13 @@ for (let i = 0; i < OPERATORS.length; i++) {
 function _clear() {
     OPERATION.innerHTML = "";
     RESULT.innerHTML = "";
+    SCREEN__EQUAL.innerHTML = "";
 };
 
 
 //
 function _delete() {
-    let lastOperator = OPERATION.innerText.slice(-1);
+    let lastOperator = OPERATION.innerHTML.slice(-1);
 
     if (
         lastOperator != "+" &&
@@ -70,6 +74,7 @@ function _delete() {
     ) {
         RESULT.innerHTML = RESULT.innerText.slice(0, -1);
         OPERATION.innerHTML = OPERATION.innerText.slice(0, -1);
+        SCREEN__EQUAL.innerHTML = "";
     };
 };
 
@@ -84,9 +89,12 @@ function typeDot() {
     let operatorTimes = operation.indexOf("×");
     let operatorDivide = operation.indexOf("÷");
 
-    if (display < 9 && display > 0) {
+
+
+    if (display < displayLimit && display > 0) {
         if (dot < 1) {
             RESULT.innerHTML += this.value;
+            SCREEN__EQUAL.innerHTML = "";
         }
     }
 
@@ -96,11 +104,12 @@ function typeDot() {
         operatorTimes >= 0 ||
         operatorDivide >= 0
     ) {
-        if (display < 9) {
+        if (display < displayLimit) {
             OPERATION.innerHTML += RESULT.innerHTML.slice(-1);
         }
     } else {
         OPERATION.innerHTML = RESULT.innerHTML;
+        SCREEN__EQUAL.innerHTML = "";
     }
 }
 
@@ -116,9 +125,10 @@ function typeZero() {
     let operatorDivide = operation.indexOf("÷");
 
 
-    if (display < 9) {
+    if (display < displayLimit) {
         if (zero == "" || zero > 0 || display > 1) {
             RESULT.innerHTML += this.value;
+            SCREEN__EQUAL.innerHTML = "";
         }
     };
 
@@ -128,7 +138,7 @@ function typeZero() {
         operatorTimes >= 0 ||
         operatorDivide >= 0
     ) {
-        if (display < 9) {
+        if (display < displayLimit) {
             OPERATION.innerHTML += RESULT.innerHTML.slice(-1);
         }
     } else {
@@ -147,7 +157,9 @@ function typeNumber() {
     let operatorTimes = operation.indexOf("×");
     let operatorDivide = operation.indexOf("÷");
 
-    if (display < 9) {
+    SCREEN__EQUAL.innerHTML = "";
+
+    if (display < displayLimit) {
         if (zero == "0" && display == 1) {
             RESULT.innerHTML = "";
             RESULT.innerHTML += this.value;
@@ -163,7 +175,7 @@ function typeNumber() {
         operatorTimes >= 0 ||
         operatorDivide >= 0
     ) {
-        if (display < 9) {
+        if (display < displayLimit) {
             OPERATION.innerHTML += RESULT.innerHTML.slice(-1);
         }
     } else {
@@ -181,6 +193,8 @@ function typeOperator() {
     let operatorMinus = operation.indexOf("-");
     let operatorTimes = operation.indexOf("×");
     let operatorDivide = operation.indexOf("÷");
+    let equal = SCREEN__EQUAL.innerText;
+
 
     if (display > 0) {
         if (
@@ -197,6 +211,8 @@ function typeOperator() {
             ) {
                 OPERATION.innerHTML += this.value;
                 RESULT.innerHTML = "";
+                SCREEN__EQUAL.innerHTML = "";
+
             }
         } else if (
             lastOperator == "+" ||
@@ -208,6 +224,14 @@ function typeOperator() {
             OPERATION.innerHTML += this.value;
         };
     };
+
+    if (equal == "=" && operation == "") {
+        SCREEN__EQUAL.innerHTML = "";
+        OPERATION.innerHTML = RESULT.innerHTML;
+        OPERATION.innerHTML += this.value;
+        RESULT.innerHTML = "";
+
+    }
 };
 
 
@@ -216,8 +240,34 @@ function typeOperator() {
 EQUAL.addEventListener("click", typeEqual);
 
 function typeEqual() {
+    let display = OPERATION.innerHTML.length;
+    let operation = OPERATION.innerText;
+    let lastOperator = OPERATION.innerText.charAt(display - 1);
+    let operatorPlus = operation.indexOf("+");
+    let operatorMinus = operation.indexOf("-");
+    let operatorTimes = operation.indexOf("×");
+    let operatorDivide = operation.indexOf("÷");
+    let result = "";
 
-}
+    if (
+        operatorPlus > 0 ||
+        operatorMinus > 0 ||
+        operatorTimes > 0 ||
+        operatorDivide > 0
+    ) {
+        if (
+            lastOperator != "+" &&
+            lastOperator != "-" &&
+            lastOperator != "×" &&
+            lastOperator != "÷"
+        ) {
+            result = "" + eval(OPERATION.innerText.replaceAll(",", ".").replace("×", "*").replace("÷", "/"));
+            RESULT.innerHTML = result.replace(".", ",");
+            SCREEN__EQUAL.innerHTML = "=";
+            OPERATION.innerHTML = "";
+        }
+    };
+};
 
 
 // lastOperator != "+" || lastOperator != "-" || lastOperator != "&times" || lastOperator != "&divide"
