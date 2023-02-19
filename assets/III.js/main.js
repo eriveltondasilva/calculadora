@@ -15,7 +15,7 @@ const SCREEN__EQUAL = document.querySelector(".js-screen__equal");
 const NUMBERS = document.querySelectorAll(".js-keyboard__number");
 const OPERATORS = document.querySelectorAll(".js-keyboard__operator");
 
-let displayLimit = 8;
+let displayLimit = 9;
 
 
 
@@ -263,7 +263,7 @@ function typeEqual() {
         ) {
             result = "" + eval(OPERATION.innerText.replaceAll(",", ".").replace("×", "*").replace("÷", "/"));
             RESULT.innerHTML = result.replace(".", ",");
-            SCREEN__EQUAL.innerHTML = "=";
+            SCREEN__EQUAL.innerHTML = "= ";
             OPERATION.innerHTML = "";
         }
     };

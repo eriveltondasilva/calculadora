@@ -8,42 +8,45 @@
 // Coloque aqui os elementos relativo a cores do tema padrão.
 body {
     background-color: color(background);
-    color: color(text);
+    background:
+        linear-gradient(150deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 50%, rgba(0, 212, 255, 1) 100%);
 }
 
 .background {
-    background-color: color(background-cal);
+    background-color: color(surface);
+    color: color(onBackground);
 }
 
 .screen {
-    background-color: color(background-screen);
+    background-color: color(screen);
+    color: color(onScreen);
 }
 
 .screen__operation {
-    color: gray;
+    color: light(color(onScreen), 50%);
 }
 
 .keyboard__key,
 .keyboard__number,
 .keyboard__key-aside {
-    background-color: #fff;
+    background-color: color(primary);
+    color: color(onPrimary);
 }
 
 .keyboard__key,
 .keyboard__key-aside {
-    background-color: #ccf;
+    background-color: color(secondary);
+    color: color(onSecondary);
 }
 
 .keyboard__key:hover,
 .keyboard__number:hover,
 .keyboard__key-aside:hover {
-    background-color: lightgray;
-    border-color: gray;
-
+    background-color: dark(color(primary), 70%);
 }
 
 // declaração para tornar as teclas de operação de uma cor diferente
 .keyboard__key:hover,
 .keyboard__key-aside:hover {
-    background-color: #aaf;
+    background-color: dark(color(secondary), 70%);
 }

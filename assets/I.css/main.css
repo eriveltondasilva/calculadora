@@ -450,14 +450,14 @@ h1 {
 \*----------------------------------------*/
 .background {
   border-radius: 20px;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4), inset 3px 3px 8px rgba(255, 255, 255, 0.5);
-  padding: 20px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4), inset 2px 2px 8px rgba(255, 255, 255, 0.5);
+  padding: 20px 35px;
   height: 500px;
   width: 350px;
 }
 
 .screen {
-  box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   padding: 5px 20px;
 }
@@ -474,7 +474,7 @@ h1 {
 .keyboard__key,
 .keyboard__number,
 .keyboard__key-aside {
-  box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
   padding: 5px 0;
 }
@@ -495,16 +495,18 @@ h1 {
 //#THEME: DEFAULT
 \*----------------------------------------*/
 body {
-  background-color: #222;
-  color: #222;
+  background-color: rgb(2, 0, 36);
+  background: linear-gradient(150deg, rgb(2, 0, 36) 0%, rgb(9, 9, 121) 50%, rgb(0, 212, 255) 100%);
 }
 
 .background {
-  background-color: lightgreen;
+  background-color: #041E42;
+  color: #fff;
 }
 
 .screen {
-  background-color: snow;
+  background-color: #fff;
+  color: #000;
 }
 
 .screen__operation {
@@ -515,23 +517,24 @@ body {
 .keyboard__number,
 .keyboard__key-aside {
   background-color: #fff;
+  color: #222;
 }
 
 .keyboard__key,
 .keyboard__key-aside {
-  background-color: #ccf;
+  background-color: #87CEEB;
+  color: #041E42;
 }
 
 .keyboard__key:hover,
 .keyboard__number:hover,
 .keyboard__key-aside:hover {
-  background-color: lightgray;
-  border-color: gray;
+  background-color: #b3b3b3;
 }
 
 .keyboard__key:hover,
 .keyboard__key-aside:hover {
-  background-color: #aaf;
+  background-color: #5f90a5;
 }
 
 /*----------------------------------------*\
@@ -542,12 +545,16 @@ body {
    * Variáveis de cores do dark mode
    *
    */
-  --color-primary: #000099;
-  --color-secondary: #004d00;
-  --color-background: #070707;
-  --color-background-cal: #568f56;
-  --color-background-screen: #999696;
-  --color-text: lightgray;
+  --color-primary: #999999;
+  --color-secondary: #517c8d;
+  --color-background: #000007;
+  --color-surface: #021228;
+  --color-screen: #999999;
+  --color-onPrimary: #141414;
+  --color-onSecondary: #021228;
+  --color-onBackground: #999999;
+  --color-onScreen: black;
+  --color-onSurface: #993b2b;
 }
 
 /*----------------------------------------*\

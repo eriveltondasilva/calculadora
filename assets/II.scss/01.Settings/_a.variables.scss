@@ -6,46 +6,48 @@
 
 // -> Colors:
 $colors: (
-    'primary'           : blue,
-    'secondary'         : green, 
-    'background'        : #222,
-    'background-cal'    : lightgreen,
-    'background-screen' : snow,
-    'text'              : #222,
+    'primary' : #fff,
+    'secondary' : #87CEEB,
+    
+    'background' : rgb(2, 0, 36),
+    'surface' : #041E42,
+    'screen' : #fff,
+
+    'onPrimary' : #222,
+    'onSecondary' : #041E42,
+    'onBackground' : #fff,
+    'onScreen' : #000,
+    'onSurface' : tomato,
 
 );
 
 
 // -> breakpoints:
 $breakpoints: (
-    'small'         : 600px,
-    'med'           : 900px,
-    'large'         : 1200px,
+    'small' : 600px,
+    'med' : 900px,
+    'large' : 1200px,
 );
 
 
 // -> Fonts:
 $fonts: (
-    "sansserif": (
-        'Source Sans Pro',
+    "sansserif": ('Source Sans Pro',
         'Verdana',
         'Arial',
         'Helvetica',
         sans-serif,
     ),
 
-    "serif": (
-        'Source Serif Pro',
+    "serif": ('Source Serif Pro',
         'Times New Roman',
         'Times',
         'Georgia',
         serif,
     ),
 
-    "monospace": (
-        'Source Code Pro',
+    "monospace": ('Source Code Pro',
         'Courier',
         monospace,
     )
 );
-
