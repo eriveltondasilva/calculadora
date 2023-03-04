@@ -1,4 +1,4 @@
-// # CALCULADORA
+// CALCULADORA
 // TODO: refatorar o código focando em enxugar as partes repetidas
 
 
