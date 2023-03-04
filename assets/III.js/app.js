@@ -1,14 +1,16 @@
-// CALCULADORA
+"use strict";
+
+// !CALCULADORA
+
 // TODO: refatorar o código focando em enxugar as partes repetidas
 
-
-// -Constantes
+// *Constantes
 const OPERATION = document.querySelector(".js-screen__operation");
 const RESULT = document.querySelector(".js-screen__result");
 const CLEAR = document.querySelector(".js-keyboard__clear");
 const DELETE = document.querySelector(".js-keyboard__delete");
 const EQUAL = document.querySelector(".js-keyboard__equal");
-const ZERO = document.querySelector(".js-keyboard__zero");
+// const ZERO = document.querySelector(".js-keyboard__zero");
 const DOT = document.querySelector(".js-keyboard__dot");
 const SCREEN__EQUAL = document.querySelector(".js-screen__equal");
 
