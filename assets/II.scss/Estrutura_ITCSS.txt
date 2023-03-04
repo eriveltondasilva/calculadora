@@ -34,3 +34,7 @@
 |	_a.no-js.scss			# Definições para caso o JavaScripts não esteja funcionando.
 |	_b.hacks.scss			# Todas as definições que deverá se sobrepor as demais e sempre terá '!important' ao final.
 |	_c.shame.scss			# Declarações que funcionam mesmo sem se saber o porquê (devem ser evitadas e, posteriormente, eliminadas).
+
+Atalhos para o sass:
+sass --update --no-source-map assets/II.scss:assets/I.css
+sass --style=compressed assets/I.css/main.css assets/I.css/main.min.css
