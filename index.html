@@ -1,176 +1,152 @@
-<!doctype html>
-<html class="no-js" lang="pt-BR">
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+  <head>
+
+    <meta charset="UTF-8" />
+    <meta name="author" content="Erivelton da Silva" />
+    <meta name="description" content="Este projeto tem como propósito treinar os meus conhecimentos em html, css(scss) e js." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="author" content="###">
-  <meta name="description" content="###">
-  <meta name="keywords" content="###">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Configurações da aba do título -->
+    <title>Calculadora.js</title>
+    <link rel="shortcut icon" href="icon.svg" type="image/x-icon" />
 
 
-  <!-- ---------- Configurações da aba do título ---------- -->
-  <title>Título da Página</title>
-  <meta name="theme-color" content="###">
-  <link rel="shortcut icon" href="###" type="image/x-icon">
+    <!-- *Fonts: ### -->
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet" />
 
+    <!-- *Icons: fontawesome_6.x -->
+    <script src="https://kit.fontawesome.com/39b73d1046.js" crossorigin="anonymous"></script>
 
-  <!-- TODO: -->
-  <!-- Arquivo para mostrar uma prévia do conteúdo ou uma imagem do site ao compartilhar. -->
-  <!-- o endereço do site -->
-  <!-- 
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
-  -->
+    <!-- *Styles: ### -->
+    <link rel="stylesheet" href="assets/I.css/main.min.css" />
 
+    <!-- *Scripts: ### -->
+    <script src="assets/III.js/app.js" defer></script>
 
-  <!-- ---------- Fonts: ### ---------- -->
-  <!-- Use este espaço para importar suas fontes -->
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
-
-
-  <!-- ---------- Icons: fontawesome_6.x | ionicons_5.5.2 ---------- -->
-  <!-- 1. Caso não queira usar os ícones fontawesome ou precise usar outros -->
-  <!--    ícones, descomente os ícones IonIcons abaixo. -->
-  <script src="https://kit.fontawesome.com/39b73d1046.js" crossorigin="anonymous"></script>
-
-  <!-- <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script> -->
-  <!-- [1] -->
-  <!-- <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> --> <!-- [1] -->
-
-
-  <!-- ---------- Styles: ### ---------- -->
-  <link rel="stylesheet" href="assets/I.css/main.css">
-
-
-  <!-- ---------- Scripts: modernizr_3.11.2 | jquery_3.6.3 | bootstrap_5.2.3 ---------- -->
-  <!-- 1. O atributo 'defer' é usado abaixo para impedir que o script seja -->
-  <!--    executado até que a página inteira seja carregada. -->
-  <!-- 2. Use este arquivo caso você queira adicionar algum plug. -->
-  <script src="assets/III.js/vendor/jquery_3.6.3.min.js" defer></script> <!-- [1] -->
-  <script src="assets/III.js/main.js" defer></script> <!-- [1] -->
-
-  <!-- <script src="/Assets/js/_plugins.js" defer></script> --> <!-- [2] -->
-
-</head>
+  </head>
 
 
 
 
 
-<!-- ---------------------------------------- -->
-<!-- #body -->
-<!-- ---------------------------------------- -->
+  <!-- *BODY -->
 
-<body class="l-body">
+  <body class="l-body">
 
+    <main class="background">
 
-  <main class="background">
-
-    <h1 class="text-center">
-      CALCULADORA
-    </h1>
-
-    <section class="screen l-screen">
-
-      <div class="screen__operation js-screen__operation"></div>
-      <div class="screen__result">
-        <span class="js-screen__equal"></span>
-        <span class="js-screen__result"></span>
-      </div>
-
-    </section>
+      <h1 class="text-center">CALCULADORA</h1>
 
 
-    <section class="keyboard l-keyboard">
+      <!-- screen -->
+      <section class="screen l-screen">
+
+        <div class="screen__operation js-screen__operation"></div>
+
+        <div class="screen__result">
+          <span class="js-screen__equal"></span>
+          <span class="js-screen__result"></span>
+        </div>
+
+      </section>
 
 
-      <button value="" class="keyboard__key js-keyboard__clear">
-        <i class="fa-solid fa-c"></i>
-      </button>
+      <!-- keyboard -->
+      <section class="keyboard l-keyboard">
 
-      <button value="" class="keyboard__key js-keyboard__delete">
-        <i class="fa-solid fa-delete-left"></i>
-      </button>
+        <button value="" class="keyboard__key js-keyboard__clear">
+          <i class="fa-solid fa-c"></i>
+        </button>
 
-      <button value="÷" class="keyboard__key js-keyboard__operator">
-        <i class="fa-solid fa-divide"></i>
-      </button>
+        <button value="" class="keyboard__key js-keyboard__delete">
+          <i class="fa-solid fa-delete-left"></i>
+        </button>
 
-      <button value="×" class="keyboard__key js-keyboard__operator">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
+        <button value="÷" class="keyboard__key js-keyboard__operator">
+          <i class="fa-solid fa-divide"></i>
+        </button>
 
-
-      <button value="7" class="keyboard__number js-keyboard__number">
-        <i class="fa-solid fa-7"></i>
-      </button>
-
-      <button value="8" class="keyboard__number js-keyboard__number">
-        <i class="fa-solid fa-8"></i>
-      </button>
-
-      <button value="9" class="keyboard__number js-keyboard__number">
-        <i class="fa-solid fa-9"></i>
-      </button>
-
-      <button value="4" class="keyboard__number js-keyboard__number">
-        <i class="fa-solid fa-4"></i>
-      </button>
-
-      <button value="5" class="keyboard__number js-keyboard__number">
-        <i class="fa-solid fa-5"></i>
-      </button>
-
-      <button value="6" class="keyboard__number js-keyboard__number">
-        <i class="fa-solid fa-6"></i>
-      </button>
-
-      <button value="1" class="keyboard__number js-keyboard__number">
-        <i class="fa-solid fa-1"></i>
-      </button>
-
-      <button value="2" class="keyboard__number js-keyboard__number">
-        <i class="fa-solid fa-2"></i>
-      </button>
+        <button value="×" class="keyboard__key js-keyboard__operator">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
 
 
-      <button value="3" class="keyboard__number js-keyboard__number">
-        <i class="fa-solid fa-3"></i>
-      </button>
+        <button value="7" class="keyboard__number js-keyboard__number">
+          <i class="fa-solid fa-7"></i>
+        </button>
 
-      <button value="0" class="keyboard__number keyboard__number--lg js-keyboard__number">
-        <i class="fa-solid fa-0"></i>
-      </button>
+        <button value="8" class="keyboard__number js-keyboard__number">
+          <i class="fa-solid fa-8"></i>
+        </button>
 
-      <button value="," class="keyboard__number js-keyboard__dot">
-        <i class="fa-solid fa-circle"></i>
-      </button>
+        <button value="9" class="keyboard__number js-keyboard__number">
+          <i class="fa-solid fa-9"></i>
+        </button>
 
+        <button value="4" class="keyboard__number js-keyboard__number">
+          <i class="fa-solid fa-4"></i>
+        </button>
 
-      <button value="-" class="keyboard__key-aside keyboard__key--minus js-keyboard__operator">
-        <i class="fa-solid fa-minus"></i>
-      </button>
+        <button value="5" class="keyboard__number js-keyboard__number">
+          <i class="fa-solid fa-5"></i>
+        </button>
 
-      <button value="+" class="keyboard__key-aside keyboard__key--plus js-keyboard__operator">
-        <i class="fa-solid fa-plus"></i>
-      </button>
+        <button value="6" class="keyboard__number js-keyboard__number">
+          <i class="fa-solid fa-6"></i>
+        </button>
 
-      <button value="=" class="keyboard__key-aside keyboard__key--equals js-keyboard__equal">
-        <i class="fa-solid fa-equals"></i>
-      </button>
+        <button value="1" class="keyboard__number js-keyboard__number">
+          <i class="fa-solid fa-1"></i>
+        </button>
 
+        <button value="2" class="keyboard__number js-keyboard__number">
+          <i class="fa-solid fa-2"></i>
+        </button>
 
+        <button value="3" class="keyboard__number js-keyboard__number">
+          <i class="fa-solid fa-3"></i>
+        </button>
 
-    </section>
+        <button
+          value="0"
+          class="keyboard__number keyboard__number--lg js-keyboard__number"
+        >
+          <i class="fa-solid fa-0"></i>
+        </button>
 
-  </main>
+        <button value="," class="keyboard__number js-keyboard__dot">
+          <i class="fa-solid fa-circle"></i>
+        </button>
 
+        <button
+          value="-"
+          class="keyboard__key-aside keyboard__key--minus js-keyboard__operator"
+        >
+          <i class="fa-solid fa-minus"></i>
+        </button>
 
-</body>
+        <button
+          value="+"
+          class="keyboard__key-aside keyboard__key--plus js-keyboard__operator"
+        >
+          <i class="fa-solid fa-plus"></i>
+        </button>
 
+        <button
+          value="="
+          class="keyboard__key-aside keyboard__key--equals js-keyboard__equal"
+        >
+          <i class="fa-solid fa-equals"></i>
+        </button>
+
+      </section>
+
+    </main>
+
+  </body>
 
 </html>
