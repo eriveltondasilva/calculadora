@@ -1,0 +1,40 @@
+// *url('/assets/scss/05.Components/_a.components.scss')
+
+/*----------------------------------------*\
+//#COMPONENTS
+\*----------------------------------------*/
+
+
+.background {
+    border-radius: 20px;
+    padding      : 20px 35px;
+    height       : 500px;
+    width        : 350px;
+}
+
+.screen {
+    border-radius: 10px;
+    padding      : 5px 10px;
+}
+
+.screen__operation,
+.screen__result {
+    height: 2.5rem;
+}
+
+.keyboard {
+    margin: 15px 0;
+}
+
+.keyboard__key,
+.keyboard__number,
+.keyboard__key-aside {
+    border-radius: 5px;
+    padding      : 5px 0;
+}
+
+.keyboard__key,
+.keyboard__number,
+.keyboard__key-aside:not(.keyboard__key--equals) {
+    height: 50px;
+}

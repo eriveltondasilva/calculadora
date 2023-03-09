@@ -1,0 +1,27 @@
+// *url('/assets/scss/01.Settings/_b.functions.scss')
+
+// ----------------------------------------
+// #FUNÇÕES_SASS
+// ----------------------------------------
+
+// função para tornar as cores mais escuras conforme a porcentagem
+@function dark($color, $percent) {
+    @return mix($color, #000, $percent);
+}
+
+
+// função para tornar as cores mais claras conforme a porcentagem
+@function light($color, $percent) {
+    @return mix($color, #fff, $percent);
+}
+
+
+// função para pegar as cores do map $colors
+@function color($color) {
+    @return map-get($colors, $color);
+}
+
+
+@function font($font) {
+    @return map-get($fonts, $font);
+}

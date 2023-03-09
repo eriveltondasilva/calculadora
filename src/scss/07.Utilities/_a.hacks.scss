@@ -1,0 +1,46 @@
+// *url('/assets/scss/10.Utilities/_a.hacks.scss')
+
+/*----------------------------------------*\
+//#HACKS
+\*----------------------------------------*/
+
+/* Esconde o elemento sem deixar espaço do elemento no local */
+.is-hidden {
+    display: none !important;
+}
+
+/* Mostra o elemento como um bloco */
+.is-visible-block {
+    display: block !important;
+}
+
+/* Mostra o elemento como um display inline */
+.is-visible-inline {
+    display: inline !important;
+}
+
+/* Esconde o elemento deixando o espaço do elemento no local */
+.is-invisible {
+    visibility: hidden !important;
+}
+
+
+/* Coloca o texto do centro */
+.text-center {
+    text-align: center !important;
+}
+
+/* Coloca o texto à direita */
+.text-right {
+    text-align: right !important;
+}
+
+/* Coloca o texto à esquerda */
+.text-left {
+    text-align: left !important;
+}
+
+/* Justifica o texto */
+.text-justify {
+    text-align: justify !important;
+}
