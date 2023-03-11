@@ -4,16 +4,16 @@
 // TODO: refatorar o código focando em enxugar as partes repetidas e desnecessárias
 // *Constantes
 const SCREEN_OPERATION = document.querySelector(".js-screen__operation");
-const SCREEN_RESULT    = document.querySelector(".js-screen__result");
-const SCREEN_EQUAL     = document.querySelector(".js-screen__equal");
+const SCREEN_RESULT = document.querySelector(".js-screen__result");
+const SCREEN_EQUAL = document.querySelector(".js-screen__equal");
 
-const KEY_CLEAR  = document.querySelector(".js-keyboard__clear");
+const KEY_CLEAR = document.querySelector(".js-keyboard__clear");
 const KEY_DELETE = document.querySelector(".js-keyboard__delete");
-const KEY_EQUAL  = document.querySelector(".js-keyboard__equal");
-const KEY_DOT    = document.querySelector(".js-keyboard__dot");
-const KEY_ZERO   = document.querySelector(".js-keyboard__zero");
+const KEY_EQUAL = document.querySelector(".js-keyboard__equal");
+const KEY_DOT = document.querySelector(".js-keyboard__dot");
+const KEY_ZERO = document.querySelector(".js-keyboard__zero");
 
-const KEY_NUMBERS   = document.querySelectorAll(".js-keyboard__number");
+const KEY_NUMBERS = document.querySelectorAll(".js-keyboard__number");
 const KEY_OPERATORS = document.querySelectorAll(".js-keyboard__operator");
 
 let display_limiter = 9;
@@ -28,8 +28,8 @@ KEY_CLEAR.addEventListener("click", typeClear);
 
 function typeClear() {
   SCREEN_OPERATION.innerHTML = "";
-  SCREEN_RESULT.innerHTML    = "";
-  SCREEN_EQUAL.innerHTML     = "";
+  SCREEN_RESULT.innerHTML = "";
+  SCREEN_EQUAL.innerHTML = "";
 }
 //
 //
@@ -39,7 +39,7 @@ KEY_DELETE.addEventListener("click", typeDelete);
 
 function typeDelete() {
   let operation_display_length = SCREEN_OPERATION.innerHTML.length;
-  let result_display_length    = SCREEN_RESULT.innerHTML.length;
+  let result_display_length = SCREEN_RESULT.innerHTML.length;
 
   if (SCREEN_EQUAL.innerHTML) {
     return;
@@ -47,7 +47,7 @@ function typeDelete() {
 
   // Retorna o primeiro número digitado ao apertar deletar quando o result não tiver conteúdo
   if (operation_display_length > 0 && result_display_length === 0) {
-    SCREEN_RESULT.innerHTML    = SCREEN_OPERATION.innerHTML.slice(0, -1);
+    SCREEN_RESULT.innerHTML = SCREEN_OPERATION.innerHTML.slice(0, -1);
     SCREEN_OPERATION.innerHTML = "";
     return;
   }
@@ -60,11 +60,15 @@ function typeDelete() {
 // Imprime os números na tela
 KEY_NUMBERS.forEach((number) => number.addEventListener("click", typeNumbers));
 
-function typeNumbers() {
-  let display_length  = SCREEN_RESULT.innerHTML.length;
-  let first_character = SCREEN_RESULT.innerHTML.charAt(0);
+// KEY_NUMBERS.forEach((number) =>
+//   number.addEventListener("keypress", typeNumbers)
+// );
 
-  if (display_length === display_limiter) {
+function typeNumbers(e) {
+  let first_character = SCREEN_RESULT.innerHTML.charAt(0);
+  let display_length = SCREEN_RESULT.innerHTML.length;
+
+  if (display_length >= display_limiter) {
     return;
   }
 
@@ -74,11 +78,11 @@ function typeNumbers() {
 
   if (SCREEN_EQUAL.innerHTML) {
     SCREEN_OPERATION.innerHTML = "";
-    SCREEN_RESULT.innerHTML    = "";
+    SCREEN_RESULT.innerHTML = "";
   }
 
   SCREEN_RESULT.innerHTML += this.value;
-  SCREEN_EQUAL.innerHTML   = "";
+  SCREEN_EQUAL.innerHTML = "";
 }
 //
 //
@@ -87,10 +91,10 @@ function typeNumbers() {
 KEY_ZERO.addEventListener("click", typeZero);
 
 function typeZero() {
-  let display_length  = SCREEN_RESULT.innerHTML.length;
+  let display_length = SCREEN_RESULT.innerHTML.length;
   let first_character = SCREEN_RESULT.innerHTML.charAt(0);
 
-  if (display_length === display_limiter) {
+  if (display_length >= display_limiter) {
     return;
   }
 
@@ -101,11 +105,11 @@ function typeZero() {
 
   if (SCREEN_EQUAL.innerHTML) {
     SCREEN_OPERATION.innerHTML = "";
-    SCREEN_RESULT.innerHTML    = "";
+    SCREEN_RESULT.innerHTML = "";
   }
 
   SCREEN_RESULT.innerHTML += this.value;
-  SCREEN_EQUAL.innerHTML   = "";
+  SCREEN_EQUAL.innerHTML = "";
 }
 //
 //
@@ -115,7 +119,7 @@ KEY_DOT.addEventListener("click", typeDot);
 
 function typeDot() {
   let display_length = SCREEN_RESULT.innerHTML.length;
-  let dot_limiter    = SCREEN_RESULT.innerHTML.includes(",");
+  let dot_limiter = SCREEN_RESULT.innerHTML.includes(",");
 
   if (display_length === 0) {
     SCREEN_RESULT.innerHTML = 0;
@@ -127,11 +131,11 @@ function typeDot() {
 
   if (SCREEN_EQUAL.innerHTML) {
     SCREEN_OPERATION.innerHTML = "";
-    SCREEN_RESULT.innerHTML    = 0;
+    SCREEN_RESULT.innerHTML = 0;
   }
 
   SCREEN_RESULT.innerHTML += this.value;
-  SCREEN_EQUAL.innerHTML   = "";
+  SCREEN_EQUAL.innerHTML = "";
 }
 //
 //
@@ -142,11 +146,11 @@ KEY_OPERATORS.forEach((operator) =>
 );
 
 function typeOperators() {
-  const pattern                  = /[-+×÷]/;
-  let   operator_limiter         = pattern.test(SCREEN_OPERATION.innerHTML);
-  let   last_operator            = pattern.test(SCREEN_OPERATION.innerHTML.slice(-1));
-  let   result_display_length    = SCREEN_RESULT.innerHTML.length;
-  let   operation_display_length = SCREEN_OPERATION.innerHTML.length;
+  const pattern = /[-+×÷]/;
+  let operator_limiter = pattern.test(SCREEN_OPERATION.innerHTML);
+  let last_operator = pattern.test(SCREEN_OPERATION.innerHTML.slice(-1));
+  let result_display_length = SCREEN_RESULT.innerHTML.length;
+  let operation_display_length = SCREEN_OPERATION.innerHTML.length;
 
   // Impede que exista um operador matemático no início do número
   if (!result_display_length && !operation_display_length) {
@@ -158,7 +162,7 @@ function typeOperators() {
 
   // Quando o último digito for um operador matemático, apaga-o e insere o novo
   if (last_operator === true && result_display_length === 0) {
-    SCREEN_OPERATION.innerHTML  = SCREEN_OPERATION.innerHTML.slice(0, -1);
+    SCREEN_OPERATION.innerHTML = SCREEN_OPERATION.innerHTML.slice(0, -1);
     SCREEN_OPERATION.innerHTML += this.value;
     return;
   }
@@ -168,9 +172,9 @@ function typeOperators() {
     return;
   }
 
-  SCREEN_OPERATION.innerHTML  = SCREEN_RESULT.innerHTML;
+  SCREEN_OPERATION.innerHTML = SCREEN_RESULT.innerHTML;
   SCREEN_OPERATION.innerHTML += this.value;
-  SCREEN_RESULT.innerHTML     = "";
+  SCREEN_RESULT.innerHTML = "";
 }
 //
 //
@@ -179,14 +183,14 @@ function typeOperators() {
 KEY_EQUAL.addEventListener("click", typeEqual);
 
 function typeEqual() {
+  const pattern = /[-+×÷]/;
+  let operation_display = SCREEN_OPERATION.innerHTML.match(pattern);
   let operation_display_length = SCREEN_OPERATION.innerHTML.length;
-  let result_display_length    = SCREEN_RESULT.innerHTML.length;
-  let result                   = "";
-  // const pattern = /[-+×÷]/;
-  // let operation_display_number = SCREEN_OPERATION.innerHTML.split(pattern);
-  // operation_display_number = number(operation_display_number);
-  // let first_number = operation_display_number[0];
-  // let second_number = operation_display_number[1];
+  let result_display_length = SCREEN_RESULT.innerHTML.length;
+  let first_number = "";
+  let second_number = "";
+  let operation = "";
+  let final_result = "";
 
   if (operation_display_length === 0 || result_display_length === 0) {
     return;
@@ -197,20 +201,26 @@ function typeEqual() {
   }
 
   SCREEN_OPERATION.innerHTML += SCREEN_RESULT.innerHTML;
-  SCREEN_RESULT.innerHTML     = "";
+  SCREEN_RESULT.innerHTML = "";
 
-  result =
-    "" +
-    eval(
-      SCREEN_OPERATION.innerHTML
-        .replaceAll(",", ".")
-        .replace("×", "*")
-        .replace("÷", "/")
-    );
-    
-  SCREEN_RESULT.innerHTML = result.replace(".", ",");
-  SCREEN_EQUAL.innerHTML  = "=";
+  operation = SCREEN_OPERATION.innerHTML.replaceAll(",", ".").split(pattern);
+  first_number = operation[0];
+  second_number = operation[1];
+
+  if (operation_display == "+") {
+    final_result = Number(first_number) + Number(second_number);
+  }
+  if (operation_display == "-") {
+    final_result = Number(first_number) - Number(second_number);
+  }
+
+  final_result = final_result.toPrecision(1).toString().replace(".", ",");
+  SCREEN_RESULT.innerHTML = final_result;
+  SCREEN_EQUAL.innerHTML = "=";
 }
+// .
+// .replace("×", "*")
+// .replace("÷", "/");
 //
 //
 //
